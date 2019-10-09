@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: app-client-bus-config-local #会被远程配置覆盖

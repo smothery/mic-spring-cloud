@@ -1,0 +1,43 @@
+#### config type 1
+spring:
+  cloud:
+    config:
+      name: app-client-config # git的资源文件的名称
+      profile: prod # 定义profile的 名称
+      label: master # 定义配置文件所在的分支
+      # spring security
+      username: admin
+      password: admin
+      discovery:
+        enabled: true   # 通过配置中心加载配置文件
+        service-id: APP-CONFIG-BUS-SERVER   # config server在eureka之中注册的服务ID
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:admin@eureka1:7001/eureka
+    #defaultZone: http://admin:admin@eureka1:7001/eureka,http://admin:admin@eureka2:7002/eureka,http://admin:admin@eureka3:7003/eureka
+
+
+#### config type 2
+#spring:
+#  cloud:
+#    config:
+#      uri:  http://localhost:7101
+#      name: app-client-config # git的资源文件的名称
+#      profile:  staging
+#      label:  master
+#      # spring security
+#      username: admin
+#      password: enjoy
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: admin

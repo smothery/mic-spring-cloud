@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: app-product #同一服务多实例注入eureka时名字要相同
+
+eureka:
+  client:
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:admin@eureka1:7001/eureka
+#      defaultZone: http://admin:admin@eureka1:7001/eureka,http://admin:admin@eureka2:7002/eureka,http://admin:admin@eureka3:7003/eureka
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5  # 心跳时间最大间隔，这段时间内注册中心没收到心跳请求则移除节点（默认是90秒）
+
+info:
+  app.name: ${spring.application.name}
+  build.artifactId: $[project.artifactId]
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

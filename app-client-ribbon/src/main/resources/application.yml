@@ -1,0 +1,19 @@
+server:
+  port: 9092
+
+spring:
+  application:
+    name: app-client-ribbon
+
+
+ribbon:
+  eureka:
+    enabled: false
+
+APP-PRODUCT:
+  ribbon:
+    listOfServers: http://localhost:8083,http://localhost:8081,http://localhost:8082
+
+info:
+  app.name: ${spring.application.name}
+  build.artifactId: $[project.artifactId]
