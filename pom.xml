@@ -31,6 +31,9 @@
         <module>app-zuul-gateway</module>
         <module>app-config-server</module>
         <module>app-config-bus-server</module>
+        <module>app-stream-provider</module>
+        <module>app-domain</module>
+        <module>app-stream-consumer</module>
     </modules>
 
     <properties>
@@ -58,6 +61,11 @@
             <dependency>
                 <groupId>panzer.vor</groupId>
                 <artifactId>app-security</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>panzer.vor</groupId>
+                <artifactId>app-domain</artifactId>
                 <version>1.0.0</version>
             </dependency>
             <dependency>
