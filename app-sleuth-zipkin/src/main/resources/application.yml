@@ -27,8 +27,8 @@ zipkin:
   storage:
     type: mysql
     mysql:
-      host: 192.168.1.70
+      host: localhost
       port: 3306
       username: root
-      password: Yzwl2018
+      password: Ohv1obaht9aig3ahc5ice9gei6wei6Sh
       db: zipkin
