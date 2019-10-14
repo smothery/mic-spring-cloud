@@ -35,7 +35,6 @@
         <module>app-domain</module>
         <module>app-stream-consumer</module>
         <module>app-sleuth-zipkin</module>
-        <module>app-sleuth-zipkin2</module>
     </modules>
 
     <properties>
