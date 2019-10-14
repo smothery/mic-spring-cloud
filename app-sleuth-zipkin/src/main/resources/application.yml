@@ -21,7 +21,7 @@ zipkin:
     rabbitmq:
       addresses: localhost:5672
       password: guest
-      queue: ${spring.application.name}
+      queue: zipkin  # binder内固定队列名
       username: guest
       virtual-host: /
   storage:
