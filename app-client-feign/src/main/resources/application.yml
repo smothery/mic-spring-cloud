@@ -4,6 +4,14 @@ server:
 spring:
   application:
     name: app-client-feign
+  zipkin:
+    base-url: http://localhost:7103 #所有的数据提交到zipkin server
+    sender:
+      type: RABBIT
+  sleuth:
+    sampler:
+      probability: 1.0 # 定义抽样比率，默认为0.1
+    enabled: false
 
 eureka:
   client:

@@ -1,0 +1,34 @@
+server:
+  port: 7103
+
+spring:
+  application:
+    name: app-sleuth-zipkin
+
+
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+
+
+zipkin:
+  collector:
+    sample-rate: 1.0
+    http:
+      enabled: false
+    rabbitmq:
+      addresses: localhost:5672
+      password: guest
+      queue: ${spring.application.name}
+      username: guest
+      virtual-host: /
+  storage:
+    type: mysql
+    mysql:
+      host: 192.168.1.70
+      port: 3306
+      username: root
+      password: Yzwl2018
+      db: zipkin

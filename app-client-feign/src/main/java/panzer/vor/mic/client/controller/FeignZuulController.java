@@ -34,4 +34,11 @@ public class FeignZuulController {
     public String getOrderClient() {
         return applicationName + "<>" + iZuulSercice.getOrderClient();
     }
+
+    @GetMapping("/orderAndProduct/get")
+    public String getOrderAndProduct() {
+        return applicationName + "<>" + iZuulSercice.getOrderClient()
+                + "\n\n"
+                + applicationName + "<>" + iZuulSercice.getProductClient();
+    }
 }
